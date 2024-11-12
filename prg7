@@ -1,0 +1,44 @@
+#include<stdio.h>
+ #include<conio.h>
+ void Quicksort (int a [], int first, int last)
+ {
+ int i, j,pivot,temp;
+ if(first<last)
+ {
+ pivot=first;
+ i=first;
+ j=last;
+ while(i<j)
+ {
+ }
+ while (a[i]<=a[pivot]&&i<last)
+ i++;
+ while (a[j]>a[pivot])
+ j--;
+ if(i<j)
+ {
+ }
+ temp=a[i];
+ a[i]=a[j];
+ a[j]=temp;
+ temp=a[pivot];
+ a[pivot]=a[j];
+ a[j]=temp;
+Quicksort(a,first,j-1);
+ Quicksort(a,j+1,last);
+ }
+ }
+ int main()
+ {
+ int i,n,a[50];
+ printf("Enter the number of elements");
+ scanf("%d",&n);
+ printf("enter the elements");
+ for(i=0;i<n;i++)
+ scanf("%d",&a[i]);
+ Quicksort(a,0,n-1);
+ printf("Sorted elements");
+ for(i=0;i<n;i++)
+ printf("%d\t",a[i]);
+ return 0;
+ 
