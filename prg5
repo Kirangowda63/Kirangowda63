@@ -1,0 +1,63 @@
+ #include<stdio.h>
+ #include<conio.h>
+ #define MAX 5
+ int visited[MAX]={0};
+ int G[MAX][MAX],i,j;
+ void DFS(int start)
+ {
+ int stack[MAX];
+ int top=-1,i,k;
+ for (k=0;k<MAX;k++)
+ visited[k]=0;
+ stack[++top]= start;
+ visited[start]=1;
+ while(top!=-1) //stack empty
+ {
+ start=stack[top--];
+ printf("%c-", start+65);
+ for(i=0;i<MAX;i++) //adding neighbours
+ {
+ if (G[start][i] && visited[i]==0)
+ {
+ stack[++top]=i;
+ visited[i]=1;
+ break;
+ }
+}
+ }
+ }
+ }
+ void BFS(int start)
+ {
+ int q[MAX], rear=-1,front=-1,i,k;
+ for(k=0;k<MAX;k++)
+ visited[k]=0;
+ q[++rear]=start;
+ ++front;
+ visited[start]=1;
+ while(rear>=front)
+ {
+ start=q[front++];
+ printf("%c-",start+65);
+ for(i=0;i<MAX;i++)
+ {
+ }
+ }
+ if(G[start][i] && visited[i]==0)
+ {
+ }
+ q[++rear]=i;
+ visited[i]=1;
+ int main()
+ {
+ int i,j;
+printf("Enter the adjacency matrix ");
+ for(i=0;i<MAX;i++)
+ for(j=0;j<MAX;j++)
+ scanf("%d",&G[i][j]);
+ printf("\nDFS Traversal\n");
+ DFS(0);
+ printf("\nBFS Traversal\n");
+ BFS(0);
+ return 0;
+ }
