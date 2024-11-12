@@ -1,0 +1,38 @@
+ #include<stdio.h>
+ #include<conio.h>
+ int main()
+ {
+ int node,edge,a[10][10]={0}
+ int i, j, node1, node2, rsum, csum;
+ printf("Enter number of nodes \n:");
+ scanf("%d",&node);
+ printf("Enter number of edges \n");
+ scanf("%d",&edge);
+ printf("Enter node1 and node2 information of the directed edges \n");
+ for (i=1; i<=edge;i++)
+ {
+ }
+ scanf("%d%d”, &node1,&node2);
+ a[node1] [node2] =1;
+ printf("The adjacency matrix is \n");
+ for (i=1; i<=node; i++)
+ {
+ }
+ for (j=1; j<=node; j++)
+ printf("%d\t",a[i][j]);
+ printf("\n");
+ for(i=1;i<=node;i++)
+ {
+ rsum=0;
+ csum=0;
+ for(j=1;j<=node;j++)
+ {
+rsum=rsum+a[i][j];
+ csum=csum+a[j][i];
+ }
+ printf("Indegree of node %d is %d\n",i,csum);
+ printf("Outdegree of node %d is %d\n",i,rsum);
+ printf("\n");
+ }
+ return 0;
+ }
